@@ -1,0 +1,105 @@
+{
+  "path": "cz-emoji",
+  "config": {
+    "cz-emoji": {
+      "subjectMaxLength": 72,
+      "skipQuestions": [
+        "scope",
+        "issues",
+        "breaking"
+      ],
+      "types": [
+        {
+          "name": "feat",
+          "code": ":+1:",
+          "emoji": "👍",
+          "description": "Feature     実装全般"
+        },
+        {
+          "name": "fix",
+          "code": ":bug:",
+          "emoji": "🐛",
+          "description": "Fix         バグ修正"
+        },
+        {
+          "name": "wip",
+          "code": ":construction:",
+          "emoji": "🚧",
+          "description": "WIP         作業中やまだ動作しないコードなど"
+        },
+        {
+          "name": "remove",
+          "code": ":fire:",
+          "emoji": "🔥",
+          "description": "Fire        コードやファイルの削除"
+        },
+        {
+          "name": "style",
+          "code": ":sparkles:",
+          "emoji": "✨",
+          "description": "Style       CSSやGUI、見た目に関すること"
+        },
+        {
+          "name": "test",
+          "code": ":100:",
+          "emoji": "💯",
+          "description": "Test        テスト関連"
+        },
+        {
+          "name": "docs",
+          "code": ":notebook:",
+          "emoji": "📓",
+          "description": "Documents   文書やコメント"
+        },
+        {
+          "name": "package",
+          "code": ":package:",
+          "emoji": "📦️",
+          "description": "Package     ライブラリの追加"
+        },
+        {
+          "name": "assets",
+          "code": ":bento:",
+          "emoji": "🍱",
+          "description": "Assets      アセットの追加"
+        },
+        {
+          "name": "logs",
+          "code": ":bulb:",
+          "emoji": "💡",
+          "description": "Logs        ログの追加"
+        },
+        {
+          "name": "perf",
+          "code": ":zap:",
+          "emoji": "⚡️",
+          "description": "Performance パフォーマンスやUXの改善"
+        },
+        {
+          "name": "recycle",
+          "code": ":recycle:",
+          "emoji": "♻️",
+          "description": "Refactoring リファクタリング"
+        },
+        {
+          "name": "release",
+          "code": ":tada:",
+          "emoji": "🎉",
+          "description": "Release     リリース"
+        },
+        {
+          "name": "DX",
+          "code": ":technologist:",
+          "emoji": "🧑‍💻",
+          "description": "DevExp      開発者向けの改善"
+        },
+        {
+          "name": "chore",
+          "code": ":paperclip:",
+          "emoji": "📎",
+          "description": "Chore       登録されているemojiいずれにも属さない雑務"
+        }
+      ]
+    }
+  }
+}
