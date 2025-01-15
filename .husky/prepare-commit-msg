@@ -1,0 +1,4 @@
+if ! git status | grep 'interactive rebase in progress' >> /dev/null;
+then
+  exec < /dev/tty && pnpm cz --hook || true
+fi
