@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String          @id
+  email         String?
+  createdAt     DateTime        @default(now()) @map("created_at")
+  tasks         Task[]
+  journalEntries JournalEntry[]
+
+  @@map("users")
+}
+
+model Task {
+  id        String   @id @default(uuid())
+  content   String
+  completed Boolean  @default(false)
+  userId    String   @map("user_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("tasks")
+}
+
+model JournalEntry {
+  id            String   @id @default(uuid())
+  date          DateTime
+  gratitude     String?
+  futureVision  String?  @map("future_vision")
+  actions       String?
+  tasks         String?
+  bulletJournal String?  @map("bullet_journal")
+  userId        String   @map("user_id")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+  user          User     @relation(fields: [userId], references: [id])
+
+  @@unique([userId, date])
+  @@map("journal_entries")
+}
