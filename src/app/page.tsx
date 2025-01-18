@@ -40,6 +40,11 @@ export default function Home() {
     }))
   }
 
+  const handleJournalSubmit = (entry: JournalEntry) => {
+    // Handle journal submission here
+    console.log('Journal submitted:', entry)
+  }
+
   return (
     <MainLayout
       date={date}
@@ -48,6 +53,7 @@ export default function Home() {
       onDateChange={handleDateChange}
       onTaskToggle={handleTaskToggle}
       onJournalChange={handleJournalChange}
+      onJournalSubmit={handleJournalSubmit}
     />
   )
 }
