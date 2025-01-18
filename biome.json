@@ -21,7 +21,6 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-
       "correctness": {
         "noUnusedFunctionParameters": "error",
         "noUnusedVariables": "error",

@@ -1,17 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Playfair Display", serif;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --background: 40 38% 97%;
+    --foreground: 20 14% 4%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 20 14% 4%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 0 0% 9%;
@@ -68,5 +70,23 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .newspaper-title {
+    @apply font-bold text-2xl tracking-tight text-center border-b border-black/50 pb-1;
+  }
+
+  .newspaper-card {
+    @apply bg-card border border-black/20 shadow-none;
+  }
+
+  .newspaper-heading {
+    @apply font-bold text-xl border-b border-black/50 pb-1 mb-4;
+  }
+
+  .newspaper-button {
+    @apply text-foreground hover:bg-secondary transition-colors duration-200 rounded-none border border-black/20;
   }
 }
