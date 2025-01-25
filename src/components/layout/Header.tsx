@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Settings, User } from 'lucide-react'
+import { SignedIn, UserButton } from '@clerk/nextjs'
+import { Settings } from 'lucide-react'
 
 const Header = () => {
   return (
@@ -24,7 +25,9 @@ const Header = () => {
             <Settings className="h-5 w-5" />
           </Button>
           <Button variant="ghost" size="icon" className="hover:bg-secondary">
-            <User className="h-5 w-5" />
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </Button>
         </div>
       </CardContent>
