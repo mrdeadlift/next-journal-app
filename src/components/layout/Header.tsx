@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { SignedIn, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { Settings } from 'lucide-react'
+import Link from 'next/link'
 
 const Header = () => {
   return (
@@ -28,6 +29,11 @@ const Header = () => {
             <SignedIn>
               <UserButton />
             </SignedIn>
+            <SignedOut>
+              <Link href="/sign-in" className="text-primary">
+                Sign In
+              </Link>
+            </SignedOut>
           </Button>
         </div>
       </CardContent>
