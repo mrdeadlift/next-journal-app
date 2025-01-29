@@ -1,3 +1,4 @@
+import { prisma } from '@/lib/prisma'
 import type { WebhookEvent } from '@clerk/nextjs/server'
 import { headers } from 'next/headers'
 import { Webhook } from 'svix'
@@ -53,6 +54,43 @@ export async function POST(req: Request) {
   const eventType = evt.type
   console.log(`Received webhook with ID ${id} and event type of ${eventType}`)
   console.log('Webhook payload:', body)
+
+  if (eventType === 'user.created') {
+    // Do something with user data
+    try {
+      await prisma.user.create({
+        data: {
+          id: evt.data.id,
+          email: JSON.parse(body).email_address,
+        },
+      })
+    } catch (error) {
+      console.error('Error: Could not create user data:', error)
+      return new Response('Error: Could not create user data', {
+        status: 500,
+      })
+    }
+  }
+
+  if (eventType === 'user.updated') {
+    // Do something with user data
+    try {
+      await prisma.user.update({
+        where: {
+          id: evt.data.id,
+        },
+        data: {
+          id: evt.data.id,
+          email: JSON.parse(body).email_address,
+        },
+      })
+    } catch (error) {
+      console.error('Error: Could not update user data:', error)
+      return new Response('Error: Could not update user data', {
+        status: 500,
+      })
+    }
+  }
 
   return new Response('Webhook received', { status: 200 })
 }
